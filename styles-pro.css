@@ -1,0 +1,458 @@
+/* Professional Luxury CSS for Cheveux Sains - Premium Salon Website */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Reset & Professional Variables */
+:root {
+  /* Luxury Color Palette */
+  --gold: #D4AF37;
+  --gold-light: #F7E6A3;
+  --gold-dark: #B8860B;
+  --black: #0A0A0A;
+  --black-light: #1A1A1A;
+  --white: #FFFFFF;
+  --white-smoke: #F5F5F5;
+  --cream: #FFF8E7;
+  --charcoal: #2C2C2C;
+  --silver: #C0C0C0;
+  
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, var(--gold), var(--gold-light));
+  --gradient-dark: linear-gradient(135deg, var(--black), var(--charcoal));
+  
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Shadows */
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 12px 48px rgba(0, 0, 0, 0.15);
+  --shadow-strong: 0 20px 64px rgba(0, 0, 0, 0.2);
+  --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.3);
+  
+  /* Transitions */
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--charcoal);
+  background: var(--white);
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+}
+
+header h1 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--space-xl);
+}
+
+header nav a {
+  color: var(--charcoal);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  position: relative;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  transition: var(--transition);
+}
+
+header nav a:hover {
+  color: var(--gold);
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 50%, var(--black-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: var(--space-2xl);
+}
+
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-gold);
+  transition: var(--transition);
+  border: 4px solid var(--gold);
+}
+
+.hero-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(212, 175, 55, 0.5);
+}
+
+.hero h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: var(--space-lg);
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  color: var(--silver);
+  margin-bottom: var(--space-2xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-xl);
+  background: var(--gradient-gold);
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Services - Horizontal Layout */
+.services {
+  padding: var(--space-3xl) 0;
+  background: var(--white-smoke);
+}
+
+.services h2 {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--charcoal);
+  margin-bottom: var(--space-2xl);
+}
+
+.service-list {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  padding: var(--space-md);
+  scroll-behavior: smooth;
+}
+
+.service-item {
+  flex: 0 0 350px;
+  background: var(--white);
+  padding: var(--space-2xl);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.service-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--charcoal);
+  margin-bottom: var(--space-md);
+}
+
+.service-item p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-lg);
+  line-height: 1.7;
+}
+
+.service-features {
+  list-style: none;
+}
+
+.service-features li {
+  padding: var(--space-2) 0;
+  color: var(--gray-700);
+  position: relative;
+  padding-left: var(--space-lg);
+  font-size: 0.95rem;
+}
+
+.service-features li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+/* Products - Horizontal Image Alignment */
+.products {
+  padding: var(--space-3xl) 0;
+  background: var(--cream);
+}
+
+.products h2 {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--charcoal);
+  margin-bottom: var(--space-2xl);
+}
+
+.product-horizontal {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  padding: var(--space-md);
+  scroll-behavior: smooth;
+}
+
+.product-item {
+  flex: 0 0 250px;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-item h3 {
+  padding: var(--space-md);
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  text-align: center;
+}
+
+/* About Section */
+.about {
+  padding: var(--space-3xl) 0;
+  background: var(--white);
+}
+
+.about h2 {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--charcoal);
+  margin-bottom: var(--space-xl);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+  color: var(--gray-600);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Contact Section */
+.contact {
+  padding: var(--space-3xl) 0;
+  background: var(--white-smoke);
+}
+
+.contact h2 {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--charcoal);
+  margin-bottom: var(--space-xl);
+}
+
+/* Form Styling */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  color: var(--charcoal);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+input, textarea {
+  width: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--gray-300);
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: var(--space-md);
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Footer */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+footer p {
+  color: var(--silver);
+  margin-bottom: var(--space-2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  header .container {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .service-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .service-item {
+    flex: 0 0 100%;
+    max-width: 400px;
+  }
+  
+  .product-horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-item {
+    flex: 0 0 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+}
